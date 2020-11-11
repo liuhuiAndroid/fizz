@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply from: 'dependencies.gradle'
 
 android {
@@ -26,9 +27,34 @@ android {
 
 dependencies {
     api kotlin_stdlib
-    api core_ktx
+    api kotlin_coroutines_core
+    api kotlin_coroutines_android
     api appcompat
+    api activity_ktx
+    api fragment_ktx
+    api viewmodel_ktx
+    api livedata_ktx
+    api work_ktx
+    api room_ktx
+    kapt room_compiler
+    api startup
+    api viewpager2
     api constraintlayout
+    api recyclerview
     api mmkv
     api timber
+    api utdid
+    api lottie
+    api smartrefreshlayout
+    api smartrefreshlayout_header
+    api smartrefreshlayout_footer
+    api retrofit
+    api retrofit_moshi
+    api logging_interceptor
+    api moshi
+    kapt moshi_kapt
+    api glide
+    kapt gilde_kapt
+    api glide_okhttp
+    api multidex
 }

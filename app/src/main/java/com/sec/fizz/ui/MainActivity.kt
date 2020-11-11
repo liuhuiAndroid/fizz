@@ -1,18 +1,19 @@
-package com.sec.fizz
+package com.sec.fizz.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sec.common.BaseActivity
 import com.sec.common.constant.MMKVConst
 import com.sec.common.ktx.decode
+import com.sec.fizz.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mTvContent.text = "app版本号：" + decode(MMKVConst.VERSION_CODE, 0).toString()
+        mTvContent.text = "DEVICE_ID：" + decode(MMKVConst.DEVICE_ID, "")
     }
 
 }

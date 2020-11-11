@@ -2,7 +2,6 @@ package com.sec.common.ktx
 
 import java.lang.NumberFormatException
 import java.security.MessageDigest
-import java.util.*
 
 private val HEX_DIGITS = charArrayOf(
     '0', '1', '2', '3', '4',
