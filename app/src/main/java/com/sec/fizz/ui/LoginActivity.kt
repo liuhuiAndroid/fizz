@@ -5,7 +5,11 @@ import androidx.lifecycle.lifecycleScope
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.sec.common.BaseActivity
 import com.sec.common.constant.RoutePath
+import com.sec.common.data.UserInfo
+import com.sec.common.ktx.oneTimeWork
 import com.sec.common.ktx.showToast
+import com.sec.common.utilities.UserUtil
+import com.sec.common.worker.AccountInfoWorker
 import com.sec.fizz.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -23,10 +27,16 @@ class LoginActivity : BaseActivity() {
             withContext(Dispatchers.IO) {
                 delay(1000)
             }
-            showToast("登录成功")
+            UserUtil.setUserInfo(UserInfo("ID", "NAME", "", "PHOTO", "TOKEN"))
+
             setResult(RESULT_OK)
             finish()
         }
+    }
+
+    // 退出登录
+    fun logout() {
+        oneTimeWork<AccountInfoWorker>()
     }
 
 }

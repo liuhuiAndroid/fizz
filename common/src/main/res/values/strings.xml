@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="no_more_data">没有了，松手吧</string>
+
+    <string name="default_empty">数据为空啦</string>
+
+    <string name="default_net_error">网络被偷走了-点击屏幕重新加载</string>
 </resources>

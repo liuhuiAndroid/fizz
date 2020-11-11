@@ -4,13 +4,18 @@ import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.work.Data
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.sec.common.constant.ExtraKeyConst
 import com.sec.common.constant.RoutePath
 import com.sec.common.intents.ForResultCallback
 import com.sec.common.ktx.navigate
 import com.sec.common.ktx.userToken
 import com.sec.common.provider.PassportService
 import com.sec.common.ui.PassportFragment
+import com.sec.common.worker.AccountInfoWorker
 
 @Route(path = RoutePath.ACCOUNT_PASSPORT)
 class PassportServiceImpl : PassportService {
@@ -54,7 +59,11 @@ class PassportServiceImpl : PassportService {
     }
 
     override fun insertUserInfo(userString: String) {
-
+        WorkManager.getInstance(context).enqueue(
+            OneTimeWorkRequestBuilder<AccountInfoWorker>().setInputData(
+                Data.Builder().putString(ExtraKeyConst.ACCOUNT_INFO, userString).build()
+            ).build()
+        )
     }
 
     override fun init(context: Context) {

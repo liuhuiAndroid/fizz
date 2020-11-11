@@ -6,11 +6,13 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.alibaba.android.arouter.launcher.ARouter
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sec.common.R
 import com.sec.common.constant.RoutePath
 import com.sec.common.intents.ForResultCallback
+import com.sec.common.room.FizzDatabase
 
 class PassportFragment : Fragment() {
 
@@ -35,6 +37,14 @@ class PassportFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // 用户登录订阅
+        FizzDatabase.getInstance(requireActivity()).accountDao()
+            .subscribeAccount().observe(this, Observer {
+                if (it.isNotEmpty()) {
+                    /* 用户登录成功 */
+                    callBack(true)
+                }
+            })
         toLogin()
     }
 
@@ -47,7 +57,8 @@ class PassportFragment : Fragment() {
         if (requestCode == REQUEST_CODE) {
             when (resultCode) {
                 Activity.RESULT_OK -> {
-                    callBack(true)
+                    // 挪到用户登录订阅
+                    // callBack(true)
                 }
                 Activity.RESULT_CANCELED -> {
                     callBack(false)
