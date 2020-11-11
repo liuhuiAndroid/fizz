@@ -1,6 +1,7 @@
 package com.sec.common.ktx
 
 import android.os.Parcelable
+import com.sec.common.constant.MMKVConst
 import com.tencent.mmkv.MMKV
 
 /**
@@ -35,3 +36,7 @@ fun decode(key: String, default: Boolean = false): Boolean = MMKV.defaultMMKV().
 
 fun removeByKey(key: String) { MMKV.defaultMMKV().removeValueForKey(key) }
 
+/**
+ * 用户token
+ */
+fun userToken(): String = MMKV.defaultMMKV().decodeString(MMKVConst.USER_TOKEN, "")

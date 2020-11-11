@@ -12,4 +12,12 @@ object MMKVConst {
     const val VERSION_CODE = "VERSION_CODE"//app版本号
     const val DEVICE_ID = "DEVICE_ID"//device id
 
+
+    /**
+     * ====================用户信息====================
+     */
+    const val USER_ID = "USER_ID"  // userId
+    const val USER_NICKNAME = "USER_NICKNAME"  // 用户昵称
+    const val USER_TOKEN = "USER_TOKEN"  // 用户token
+
 }

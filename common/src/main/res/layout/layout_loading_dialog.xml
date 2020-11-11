@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/dialogBG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_loading_dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:indeterminateTint="@color/color_999999"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toTopOf="@id/loadingTip"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="@id/dialogBG"
+        app:layout_constraintStart_toStartOf="@id/dialogBG"
+        app:layout_constraintTop_toTopOf="@+id/dialogBG"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/loadingTip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="加载中..."
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/dialogBG"
+        app:layout_constraintEnd_toEndOf="@+id/dialogBG"
+        app:layout_constraintStart_toStartOf="@+id/dialogBG"
+        app:layout_constraintTop_toBottomOf="@id/progress" />
+</androidx.constraintlayout.widget.ConstraintLayout>

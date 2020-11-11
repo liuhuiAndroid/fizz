@@ -13,10 +13,6 @@ class AppConfig {
     companion object {
 
         fun initApplication(application: Application, versionCode: Int, versionName: String) {
-            MMKV.initialize(application)
-            if (BuildConfig.DEBUG) {
-                Timber.plant(DebugTree())
-            }
             encodeKV(MMKVConst.VERSION_CODE, versionCode)
             encodeKV(MMKVConst.VERSION_NAME, versionName)
             encodeKV(MMKVConst.DEVICE_ID, UTDevice.getUtdid(application))
