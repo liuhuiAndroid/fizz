@@ -1,5 +1,6 @@
 package com.sec.common.ktx
 
+import com.sec.common.json.NullJsonFactory
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
@@ -9,7 +10,7 @@ import org.json.JSONObject
 import java.io.IOException
 
 val moShi: Moshi
-    get() = Moshi.Builder().build()
+    get() = Moshi.Builder().add(NullJsonFactory.STANDARD).add(NullJsonFactory.COLLECTION).build()
 
 /**
  * 解析json数组
