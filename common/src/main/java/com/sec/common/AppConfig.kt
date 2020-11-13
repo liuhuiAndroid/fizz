@@ -3,10 +3,7 @@ package com.sec.common
 import android.app.Application
 import com.sec.common.constant.MMKVConst
 import com.sec.common.ktx.encodeKV
-import com.tencent.mmkv.MMKV
 import com.ut.device.UTDevice
-import timber.log.Timber
-import timber.log.Timber.DebugTree
 
 class AppConfig {
 

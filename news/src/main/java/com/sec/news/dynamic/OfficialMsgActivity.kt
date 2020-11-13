@@ -2,6 +2,8 @@ package com.sec.news.dynamic
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +35,25 @@ class OfficialMsgActivity : BaseActivity() {
         initView()
         initAdapter()
         initData()
+        showAd()
+    }
+
+    /**
+     * 展示广告
+     */
+    private fun showAd() {
+        ad_view.inflate()
+        val clMainAd = findViewById<ConstraintLayout>(R.id.cl_main_ad)
+        val imgAd = findViewById<AppCompatImageView>(R.id.img_main_ad)
+        val imgClose = findViewById<AppCompatImageView>(R.id.img_main_close)
+        val imageLoader = ImageLoader(this@OfficialMsgActivity)
+        imageLoader.display(imgAd, "https://pic.centanet.com/other/centaweb-ad/universe/20200616/ad44c6af0efff126326ef6799a4f55f817.png")
+        imgAd.debounceClick {
+            cl_root.removeView(clMainAd)
+        }
+        imgClose.debounceClick {
+            cl_root.removeView(clMainAd)
+        }
     }
 
     private fun initView() {
