@@ -35,4 +35,5 @@ ext {
     multidex = "androidx.multidex:multidex:2.0.1"
     arouter = "com.alibaba:arouter-api:1.5.1"
     arouter_compiler = "com.alibaba:arouter-compiler:1.5.1"
+    picture_selector = "com.github.LuckSiege.PictureSelector:picture_library:v2.5.9"
 }

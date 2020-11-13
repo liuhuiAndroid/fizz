@@ -3,6 +3,7 @@ package com.sec.common.widget
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import com.scwang.smart.refresh.layout.api.RefreshFooter
 import com.scwang.smart.refresh.layout.api.RefreshHeader
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.simple.SimpleComponent
@@ -11,21 +12,10 @@ import kotlinx.android.synthetic.main.lottie_footer.view.*
 
 class LottieFooter @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : SimpleComponent(context, attrs, defStyleAttr), RefreshHeader {
+) : SimpleComponent(context, attrs, defStyleAttr), RefreshFooter {
 
     init {
         View.inflate(context, R.layout.lottie_footer, this)
-    }
-
-    override fun onMoving(
-        isDragging: Boolean,
-        percent: Float,
-        offset: Int,
-        height: Int,
-        maxDragHeight: Int
-    ) {
-        super.onMoving(isDragging, percent, offset, height, maxDragHeight)
-
     }
 
     override fun onStartAnimator(refreshLayout: RefreshLayout, height: Int, maxDragHeight: Int) {

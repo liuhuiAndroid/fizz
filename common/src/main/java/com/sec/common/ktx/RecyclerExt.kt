@@ -31,7 +31,7 @@ fun RecyclerView.autoRefresh(target: Int = 3) {
 /**
  * 新房分页加载完成，pageIndex表示索引，第一页：0，第二页：10
  */
-fun SmartRefreshLayout.xfLoadComplete(pageIndex: Int, total: Int, pageCount: Int = 10) {
+fun SmartRefreshLayout.fizzLoadComplete(pageIndex: Int, total: Int, pageCount: Int = 10) {
     loadComplete(pageIndex + pageCount, total)
 }
 

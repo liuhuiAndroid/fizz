@@ -77,4 +77,5 @@ dependencies {
     api multidex
     api arouter
     kapt arouter_compiler
+    api picture_selector
 }

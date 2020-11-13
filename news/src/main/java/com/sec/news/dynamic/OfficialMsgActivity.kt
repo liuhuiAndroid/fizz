@@ -1,6 +1,8 @@
 package com.sec.news.dynamic
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -21,13 +23,20 @@ import com.sec.news.R
 import com.sec.news.dynamic.cell.OfficialMsgCell
 import com.sec.news.dynamic.cell.OfficialMsgErrorCell
 import com.sec.news.dynamic.vm.OfficialMsgViewModel
+import com.sec.news.widget.ShareDialog
 import kotlinx.android.synthetic.main.activity_official_msg_news.*
 
 @Route(path = RoutePath.DYNAMIC_SYSTEM_MSG)
 class OfficialMsgActivity : BaseActivity() {
+
     private val pageCount = 10
     private val viewModels = viewModels<OfficialMsgViewModel>()
     private lateinit var mAdapter: RecyclerAdapter
+
+    //分享
+    private val shareDialog by lazy {
+        ShareDialog()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,7 +121,7 @@ class OfficialMsgActivity : BaseActivity() {
             onFail {
                 mAdapter.submitList(1, listOf(OfficialMsgErrorCell(it)))
             }
-            smartRefreshLayout.xfLoadComplete(
+            smartRefreshLayout.fizzLoadComplete(
                 viewModels.value.pagerIndex * pageCount
                 , viewModels.value.total, pageCount
             )
@@ -128,5 +137,22 @@ class OfficialMsgActivity : BaseActivity() {
                 "SendItems" to "U108033335"
             )
         viewModels.value.getOfficialNewsList(param)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_web_share, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.action_share -> {
+            shareDialog.show(supportFragmentManager, "SHARE_DIALOG")
+            true
+        }
+        android.R.id.home -> {
+            onBackPressed()
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 }
