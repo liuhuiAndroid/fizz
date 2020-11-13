@@ -2,6 +2,7 @@ package com.sec.common.intents
 
 import android.util.SparseArray
 import androidx.lifecycle.ViewModel
+import com.sec.common.permission.PermissionsCallback
 import java.util.concurrent.atomic.AtomicInteger
 
 class ForResultViewModel : ViewModel() {
@@ -12,5 +13,9 @@ class ForResultViewModel : ViewModel() {
 
     val forResultSparseArray by lazy {
         SparseArray<ForResultCallback?>()
+    }
+
+    val permissionSparseArray by lazy {
+        SparseArray<PermissionsCallback?>()
     }
 }

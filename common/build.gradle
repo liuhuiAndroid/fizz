@@ -48,6 +48,8 @@ dependencies {
     api appcompat
     api activity_ktx
     api fragment_ktx
+    api navigation_fragment_ktx
+    api navigation_ui_ktx
     api viewmodel_ktx
     api livedata_ktx
     api work_ktx

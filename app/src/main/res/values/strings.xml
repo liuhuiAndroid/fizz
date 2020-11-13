@@ -1,3 +1,5 @@
 <resources>
-
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">推广</string>
+    <string name="title_me">我的</string>
 </resources>

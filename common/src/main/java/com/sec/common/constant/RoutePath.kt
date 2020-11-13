@@ -6,4 +6,6 @@ object RoutePath {
     const val APP_LOGIN = "/app/login"
 
     const val ACCOUNT_PASSPORT = "/account/passport"
+    const val JSON_SERVICE = "/json/service"
+
 }

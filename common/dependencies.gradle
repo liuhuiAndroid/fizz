@@ -6,6 +6,8 @@ ext {
     appcompat = "androidx.appcompat:appcompat:1.2.0"
     activity_ktx = "androidx.activity:activity-ktx:1.1.0"
     fragment_ktx = "androidx.fragment:fragment-ktx:1.2.5"
+    navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:2.3.1"
+    navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:2.3.1"
     viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     livedata_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     work_ktx = "androidx.work:work-runtime-ktx:2.4.0"
