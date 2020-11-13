@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="list_net_error">网络不给力，点击屏幕重试</string>
+    <string name="empty_news">一条消息也没有</string>
+</resources>

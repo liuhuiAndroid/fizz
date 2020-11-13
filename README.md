@@ -3,4 +3,3 @@
 
 规则：
 1. 使用SVG图片！！！
-2. SpannableStringBuilder

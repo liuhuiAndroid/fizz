@@ -41,5 +41,9 @@ class ApiService private constructor() {
             retrofit.create(CommonApi::class.java)
         }
 
+        val publicApi: PublicApi by lazy {
+            retrofit.create(PublicApi::class.java)
+        }
+
     }
 }

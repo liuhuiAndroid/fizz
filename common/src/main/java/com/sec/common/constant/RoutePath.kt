@@ -8,4 +8,7 @@ object RoutePath {
     const val ACCOUNT_PASSPORT = "/account/passport"
     const val JSON_SERVICE = "/json/service"
 
+    //news
+    const val DYNAMIC_SYSTEM_MSG = "/dynamic_news/system_msg"
+
 }

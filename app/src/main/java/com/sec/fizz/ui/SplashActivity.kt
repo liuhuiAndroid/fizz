@@ -25,7 +25,7 @@ class SplashActivity : BaseActivity() {
                     withContext(Dispatchers.IO) {
                         delay(1000)
                     }
-                    navigate(RoutePath.APP_MAIN)
+                    navigate(RoutePath.DYNAMIC_SYSTEM_MSG)
                     finish()
                 }
             }

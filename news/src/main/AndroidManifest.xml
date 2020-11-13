@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sec.news">
+
+    <application>
+        <activity
+            android:name=".dynamic.OfficialMsgActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>
