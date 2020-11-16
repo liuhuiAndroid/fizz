@@ -1,9 +1,14 @@
-*.iml
+# Android
+local.properties
+*.keystore
+*.DS_Store
+
+# Gradle
 .gradle
-/local.properties
-/.idea
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+build
+
+# Intellij
+*.iml
+*.ipr
+*.iws
+.idea

@@ -7,6 +7,7 @@ object Library {
     const val appcompat = "androidx.appcompat:appcompat:1.2.0"
     const val activity_ktx = "androidx.activity:activity-ktx:1.1.0"
     const val fragment_ktx = "androidx.fragment:fragment-ktx:1.2.5"
+    const val collection_ktx = "androidx.collection:collection-ktx:1.1.0"
     const val navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:2.3.1"
     const val navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:2.3.1"
     const val viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"

@@ -47,6 +47,7 @@ dependencies {
     api(Library.appcompat)
     api(Library.activity_ktx)
     api(Library.fragment_ktx)
+    api(Library.collection_ktx)
     api(Library.navigation_fragment_ktx)
     api(Library.navigation_ui_ktx)
     api(Library.viewmodel_ktx)
