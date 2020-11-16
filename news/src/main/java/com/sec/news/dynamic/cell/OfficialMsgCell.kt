@@ -2,6 +2,7 @@ package com.sec.news.dynamic.cell
 
 import android.annotation.SuppressLint
 import android.view.View
+import coil.transform.CircleCropTransformation
 import com.sec.common.adapter.ItemCell
 import com.sec.common.adapter.RecyclerSupport
 import com.sec.common.adapter.RecyclerVH
@@ -52,7 +53,8 @@ class OfficialMsgBV(itemView: View, support: RecyclerSupport) : RecyclerVH(itemV
             itemView.iv_pic,
             itemCell.item.converImgUrl,
             R.drawable.ic_sz_xf_error_large_4_3,
-            R.drawable.ic_sz_xf_error_large_4_3
+            R.drawable.ic_sz_xf_error_large_4_3,
+            CircleCropTransformation()
         )
     }
 }

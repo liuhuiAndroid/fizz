@@ -68,12 +68,11 @@ dependencies {
     api smartrefreshlayout_footer
     api retrofit
     api retrofit_moshi
-    api logging_interceptor
+    api okhttp
+    api okhttp_logging_interceptor
     api moshi
     kapt moshi_kapt
-    api glide
-    kapt gilde_kapt
-    api glide_okhttp
+    api coil
     api multidex
     api arouter
     kapt arouter_compiler

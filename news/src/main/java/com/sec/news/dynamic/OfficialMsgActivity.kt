@@ -44,7 +44,7 @@ class OfficialMsgActivity : BaseActivity() {
         initView()
         initAdapter()
         initData()
-        showAd()
+        // showAd()
     }
 
     /**
@@ -55,7 +55,7 @@ class OfficialMsgActivity : BaseActivity() {
         val clMainAd = findViewById<ConstraintLayout>(R.id.cl_main_ad)
         val imgAd = findViewById<AppCompatImageView>(R.id.img_main_ad)
         val imgClose = findViewById<AppCompatImageView>(R.id.img_main_close)
-        val imageLoader = ImageLoader(this@OfficialMsgActivity)
+        val imageLoader = ImageLoader()
         imageLoader.display(imgAd, "https://pic.centanet.com/other/centaweb-ad/universe/20200616/ad44c6af0efff126326ef6799a4f55f817.png")
         imgAd.debounceClick {
             cl_root.removeView(clMainAd)
@@ -82,7 +82,7 @@ class OfficialMsgActivity : BaseActivity() {
 
     private fun initAdapter() {
         mAdapter = createAdapter {
-            imageLoader = ImageLoader(this@OfficialMsgActivity)
+            imageLoader = ImageLoader()
             onSimpleCallback {
                 mAdapter.currentList[it] as OfficialMsgCell
                 //
