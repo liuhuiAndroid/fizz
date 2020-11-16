@@ -55,7 +55,7 @@ class CustomInterceptor : Interceptor {
         }
         builder
             .header("OSVersion", Build.VERSION.SDK_INT.toString())
-            .header("appVersion", decode(MMKVConst.VERSION_CODE, 0).toString())
+            .header("appVersion", decode(MMKVConst.VERSION_CODE, 0L).toString())
             .header("DeviceID", decode(MMKVConst.DEVICE_ID, "none"))
         return builder.build()
     }

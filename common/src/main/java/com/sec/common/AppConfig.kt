@@ -9,11 +9,10 @@ class AppConfig {
 
     companion object {
 
-        fun initApplication(application: Application, versionCode: Int, versionName: String) {
+        fun initApplication(application: Application, versionCode: Long, versionName: String) {
             encodeKV(MMKVConst.VERSION_CODE, versionCode)
             encodeKV(MMKVConst.VERSION_NAME, versionName)
             encodeKV(MMKVConst.DEVICE_ID, UTDevice.getUtdid(application))
-
             // 测试
             encodeKV(MMKVConst.CITY_CODE, "022")
             encodeKV(MMKVConst.CITY_EN, "tj")
