@@ -2,7 +2,7 @@ package com.sec.common.manager
 
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
-import coil.load
+import coil.singleton.load
 import coil.transform.Transformation
 
 class ImageLoader {

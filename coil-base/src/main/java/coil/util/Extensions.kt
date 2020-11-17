@@ -37,6 +37,7 @@ import coil.transform.Transformation
 import kotlinx.coroutines.Job
 import okhttp3.Call
 import okhttp3.Headers
+import okhttp3.Request
 import java.io.Closeable
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.coroutines.CoroutineContext
@@ -95,7 +96,8 @@ internal fun Closeable.closeQuietly() {
         close()
     } catch (exception: RuntimeException) {
         throw exception
-    } catch (_: Exception) {}
+    } catch (_: Exception) {
+    }
 }
 
 internal val ImageView.scale: Scale
@@ -110,7 +112,11 @@ internal val ImageView.scale: Scale
  */
 internal fun lazyCallFactory(initializer: () -> Call.Factory): Call.Factory {
     val lazy: Lazy<Call.Factory> = lazy(initializer)
-    return Call.Factory { lazy.value.newCall(it) } // Intentionally not a method reference.
+    return object : Call.Factory {
+        override fun newCall(request: Request): Call {
+            return lazy.value.newCall(request)
+        }
+    }
 }
 
 /** Modified from [MimeTypeMap.getFileExtensionFromUrl] to be more permissive with special characters. */

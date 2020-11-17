@@ -74,7 +74,7 @@ dependencies {
     api(Library.moshi)
     kapt(Library.moshi_kapt)
     // api(Library.coil)
-    api(project(":coil-singleton"))
+    api(project(":coil-base"))
     api(Library.multidex)
     api(Library.arouter)
     kapt(Library.arouter_compiler)

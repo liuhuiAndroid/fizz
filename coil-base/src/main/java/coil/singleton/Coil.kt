@@ -1,9 +1,10 @@
 @file:Suppress("NOTHING_TO_INLINE", "unused")
 
-package coil
+package coil.singleton
 
 import android.app.Application
 import android.content.Context
+import coil.ImageLoader
 import coil.request.Disposable
 import coil.request.ImageRequest
 import coil.request.ImageResult
